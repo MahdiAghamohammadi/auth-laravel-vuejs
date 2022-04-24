@@ -1,4 +1,12 @@
 @extends('layouts.app')
 @section('content')
-    <div class="text-4xl text-red-500">Home page</div>
+    <div class="flex bg-gray-100 border-b border-gray-300 py-4">
+        <div class="container mx-auto">
+            <router-link class="mr-4" to="/" exact>Home</router-link>
+            <router-link to="/about">About</router-link>
+        </div>
+    </div>
+    <div class="container mx-auto">
+        <router-view></router-view>
+    </div>
 @endsection
