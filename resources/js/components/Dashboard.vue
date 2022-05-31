@@ -8,9 +8,10 @@
 </template>
 <script>
 export default {
+  props: ["isLogin"],
   data() {
     return {
-      user: null,
+      user: "",
     };
   },
   methods: {

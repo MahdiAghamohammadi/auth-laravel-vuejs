@@ -2093,9 +2093,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: ["isLogin"],
   data: function data() {
     return {
-      user: null
+      user: ""
     };
   },
   methods: {
@@ -2150,6 +2151,34 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2324,6 +2353,52 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -2341,7 +2416,9 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       axios.post("/api/register", this.form).then(function () {
-        console.log("saved");
+        _this.$router.push({
+          name: "Login"
+        });
       })["catch"](function (error) {
         _this.errors = error.response.data.errors;
       });
@@ -2369,7 +2446,23 @@ window.Vue = (__webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js
 Vue.use(vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]);
 var app = new Vue({
   el: "#app",
-  router: new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"](_routes__WEBPACK_IMPORTED_MODULE_0__["default"])
+  router: new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"](_routes__WEBPACK_IMPORTED_MODULE_0__["default"]),
+  data: function data() {
+    return {
+      isLogin: false
+    };
+  },
+  beforeUpdate: function beforeUpdate() {
+    var _this = this;
+
+    axios.get("/api/authenticate").then(function (res) {
+      if (res) {
+        _this.isLogin = true;
+      } else {
+        _this.isLogin = false;
+      }
+    });
+  }
 });
 
 /***/ }),
@@ -20442,7 +20535,7 @@ var render = function () {
               },
             ],
             staticClass:
-              "w-full px-4 py-2 text-base bg-gray-100 border border-gray-400 rounded  focus:outline-none focus:border-indigo-500",
+              "\n          w-full\n          px-4\n          py-2\n          text-base\n          bg-gray-100\n          border border-gray-400\n          rounded\n          focus:outline-none focus:border-indigo-500\n        ",
             attrs: { placeholder: "Email", type: "email" },
             domProps: { value: _vm.form.email },
             on: {
@@ -20475,7 +20568,7 @@ var render = function () {
               },
             ],
             staticClass:
-              "w-full px-4 py-2 text-base bg-gray-100 border border-gray-400 rounded  focus:outline-none focus:border-indigo-500",
+              "\n          w-full\n          px-4\n          py-2\n          text-base\n          bg-gray-100\n          border border-gray-400\n          rounded\n          focus:outline-none focus:border-indigo-500\n        ",
             attrs: {
               placeholder: "Password",
               type: "password",
@@ -20498,7 +20591,7 @@ var render = function () {
             "button",
             {
               staticClass:
-                "flex px-8 py-2 text-lg text-white bg-indigo-500 border-0 rounded  focus:outline-none hover:bg-indigo-600",
+                "\n          flex\n          px-8\n          py-2\n          text-lg text-white\n          bg-indigo-500\n          border-0\n          rounded\n          focus:outline-none\n          hover:bg-indigo-600\n        ",
               attrs: { type: "submit" },
               on: {
                 click: function ($event) {
@@ -20621,7 +20714,7 @@ var render = function () {
               },
             ],
             staticClass:
-              "w-full px-4 py-2 text-base bg-gray-100 border border-gray-400 rounded  focus:outline-none focus:border-indigo-500",
+              "\n          w-full\n          px-4\n          py-2\n          text-base\n          bg-gray-100\n          border border-gray-400\n          rounded\n          focus:outline-none focus:border-indigo-500\n        ",
             attrs: { placeholder: "Name", type: "text" },
             domProps: { value: _vm.form.name },
             on: {
@@ -20654,7 +20747,7 @@ var render = function () {
               },
             ],
             staticClass:
-              "w-full px-4 py-2 text-base bg-gray-100 border border-gray-400 rounded  focus:outline-none focus:border-indigo-500",
+              "\n          w-full\n          px-4\n          py-2\n          text-base\n          bg-gray-100\n          border border-gray-400\n          rounded\n          focus:outline-none focus:border-indigo-500\n        ",
             attrs: { placeholder: "Email", type: "email" },
             domProps: { value: _vm.form.email },
             on: {
@@ -20687,7 +20780,7 @@ var render = function () {
               },
             ],
             staticClass:
-              "w-full px-4 py-2 text-base bg-gray-100 border border-gray-400 rounded  focus:outline-none focus:border-indigo-500",
+              "\n          w-full\n          px-4\n          py-2\n          text-base\n          bg-gray-100\n          border border-gray-400\n          rounded\n          focus:outline-none focus:border-indigo-500\n        ",
             attrs: {
               placeholder: "Password",
               type: "password",
@@ -20726,7 +20819,7 @@ var render = function () {
               },
             ],
             staticClass:
-              "w-full px-4 py-2 text-base bg-gray-100 border border-gray-400 rounded  focus:outline-none focus:border-indigo-500",
+              "\n          w-full\n          px-4\n          py-2\n          text-base\n          bg-gray-100\n          border border-gray-400\n          rounded\n          focus:outline-none focus:border-indigo-500\n        ",
             attrs: {
               placeholder: "Confirm Password",
               type: "password",
@@ -20749,7 +20842,7 @@ var render = function () {
             "button",
             {
               staticClass:
-                "flex px-8 py-2 text-lg text-white bg-indigo-500 border-0 rounded  focus:outline-none hover:bg-indigo-600",
+                "\n          flex\n          px-8\n          py-2\n          text-lg text-white\n          bg-indigo-500\n          border-0\n          rounded\n          focus:outline-none\n          hover:bg-indigo-600\n        ",
               attrs: { type: "submit" },
               on: {
                 click: function ($event) {

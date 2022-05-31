@@ -10,7 +10,16 @@
           errors.name[0]
         }}</span>
         <input
-          class="w-full px-4 py-2 text-base bg-gray-100 border border-gray-400 rounded  focus:outline-none focus:border-indigo-500"
+          class="
+            w-full
+            px-4
+            py-2
+            text-base
+            bg-gray-100
+            border border-gray-400
+            rounded
+            focus:outline-none focus:border-indigo-500
+          "
           placeholder="Name"
           type="text"
           v-model="form.name"
@@ -22,7 +31,16 @@
           errors.email[0]
         }}</span>
         <input
-          class="w-full px-4 py-2 text-base bg-gray-100 border border-gray-400 rounded  focus:outline-none focus:border-indigo-500"
+          class="
+            w-full
+            px-4
+            py-2
+            text-base
+            bg-gray-100
+            border border-gray-400
+            rounded
+            focus:outline-none focus:border-indigo-500
+          "
           placeholder="Email"
           type="email"
           v-model="form.email"
@@ -34,7 +52,16 @@
           errors.password[0]
         }}</span>
         <input
-          class="w-full px-4 py-2 text-base bg-gray-100 border border-gray-400 rounded  focus:outline-none focus:border-indigo-500"
+          class="
+            w-full
+            px-4
+            py-2
+            text-base
+            bg-gray-100
+            border border-gray-400
+            rounded
+            focus:outline-none focus:border-indigo-500
+          "
           placeholder="Password"
           type="password"
           v-model="form.password"
@@ -47,7 +74,16 @@
           errors.password_confirmation[0]
         }}</span>
         <input
-          class="w-full px-4 py-2 text-base bg-gray-100 border border-gray-400 rounded  focus:outline-none focus:border-indigo-500"
+          class="
+            w-full
+            px-4
+            py-2
+            text-base
+            bg-gray-100
+            border border-gray-400
+            rounded
+            focus:outline-none focus:border-indigo-500
+          "
           placeholder="Confirm Password"
           type="password"
           v-model="form.password_confirmation"
@@ -58,7 +94,17 @@
         <button
           @click.prevent="saveForm"
           type="submit"
-          class="flex px-8 py-2 text-lg text-white bg-indigo-500 border-0 rounded  focus:outline-none hover:bg-indigo-600"
+          class="
+            flex
+            px-8
+            py-2
+            text-lg text-white
+            bg-indigo-500
+            border-0
+            rounded
+            focus:outline-none
+            hover:bg-indigo-600
+          "
         >
           Register
         </button>
@@ -85,7 +131,7 @@ export default {
       axios
         .post("/api/register", this.form)
         .then(() => {
-          console.log("saved");
+          this.$router.push({ name: "Login" });
         })
         .catch((error) => {
           this.errors = error.response.data.errors;
