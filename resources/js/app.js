@@ -15,7 +15,7 @@ const app = new Vue({
     },
     beforeUpdate() {
         axios.get("/api/authenticate").then((res) => {
-            if (res) {
+            if (res.data.length == 1) {
                 this.isLogin = true;
             } else {
                 this.isLogin = false;

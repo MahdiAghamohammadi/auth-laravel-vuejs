@@ -16,7 +16,8 @@ export default {
   },
   methods: {
     logout() {
-      axios.post("/api/logout").then(() => {
+      axios.post("/api/logout").then((res) => {
+        localStorage.clear();
         this.$router.push({ name: "Home" });
       });
     },

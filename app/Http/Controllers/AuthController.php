@@ -44,17 +44,16 @@ class AuthController extends Controller
         ]);
     }
 
+    public function logout()
+    {
+        Auth::user()->tokens()->delete();
+    }
+
     public function authenticate()
     {
         if (Auth::check()) {
-            return true;
-        } else {
-            return false;
+            return auth()->user()->tokens;
         }
-    }
-
-    public function logout()
-    {
-        Auth::logout();
+        return false;
     }
 }

@@ -2103,7 +2103,9 @@ __webpack_require__.r(__webpack_exports__);
     logout: function logout() {
       var _this = this;
 
-      axios.post("/api/logout").then(function () {
+      axios.post("/api/logout").then(function (res) {
+        localStorage.clear();
+
         _this.$router.push({
           name: "Home"
         });
@@ -2236,7 +2238,9 @@ __webpack_require__.r(__webpack_exports__);
     loginUser: function loginUser() {
       var _this = this;
 
-      axios.post("/api/login", this.form).then(function () {
+      axios.post("/api/login", this.form).then(function (res) {
+        localStorage.setItem("token", res.data.token);
+
         _this.$router.push({
           name: "Dashboard"
         });
@@ -2449,14 +2453,14 @@ var app = new Vue({
   router: new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"](_routes__WEBPACK_IMPORTED_MODULE_0__["default"]),
   data: function data() {
     return {
-      isLogin: false
+      isLogin: ""
     };
   },
   beforeUpdate: function beforeUpdate() {
     var _this = this;
 
     axios.get("/api/authenticate").then(function (res) {
-      if (res) {
+      if (res.data.length == 1) {
         _this.isLogin = true;
       } else {
         _this.isLogin = false;

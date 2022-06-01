@@ -84,7 +84,8 @@ export default {
     loginUser() {
       axios
         .post("/api/login", this.form)
-        .then(() => {
+        .then((res) => {
+          localStorage.setItem("token", res.data.token);
           this.$router.push({ name: "Dashboard" });
         })
         .catch((error) => {
