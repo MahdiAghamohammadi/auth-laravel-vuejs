@@ -2,21 +2,25 @@
 
 ### Screenshots of project
 
-#### Home
+<style>
+    .container{
+        display: flex;
+        flex-flow: row wrap;
+    }
 
-![Image](screenshots/home.png "Home")
+    .container > img {
+        margin: 8px;
+        width: 600px;
+    }
+</style>
 
-#### About
-
-![Image](screenshots/about.png "About")
-
-#### Login
-
-![Image](screenshots/login.png "Login")
-
-#### Register
-
-![Image](screenshots/register.png "Register")
+<div class="container">
+<img src="./screenshots/home.png" title="Home">
+<img src="./screenshots/about.png" title="About">
+<img src="./screenshots/login.png" title="Login">
+<img src="./screenshots/register.png" title="Register">
+<img src="./screenshots/dashboard.png" title="Dashboard">
+</div>
 
 # Technologies used:
 
