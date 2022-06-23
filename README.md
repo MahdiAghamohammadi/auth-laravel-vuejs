@@ -2,19 +2,8 @@
 
 ### Screenshots of project
 
-<style>
-    .container{
-        display: flex;
-        flex-flow: row wrap;
-    }
 
-    .container > img {
-        margin: 8px;
-        width: 600px;
-    }
-</style>
-
-<div class="container">
+<div>
 <img src="./screenshots/home.png" title="Home">
 <img src="./screenshots/about.png" title="About">
 <img src="./screenshots/login.png" title="Login">
